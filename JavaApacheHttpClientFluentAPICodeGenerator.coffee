@@ -1,5 +1,4 @@
 require "mustache.js"
-require "URI.js"
 
 addslashes = (str) ->
     ("#{str}").replace(/[\\"]/g, '\\$&')
