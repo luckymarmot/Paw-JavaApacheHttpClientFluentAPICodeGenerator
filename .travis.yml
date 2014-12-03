@@ -10,7 +10,7 @@ script:
 deploy:
   provider: releases
   api_key:
-    secure: Bl2PKas/d4b6SAZ8qXgjhBsDZjbSNdfgF0TSlQ4HXOBAxyuV3k2g0svwrA3p1py7EpJWy5dqRJrnxUspsdq1W/mRGWRTHKEuTjq3YiQ4b+ElVIPCocMm0CEeEJ7lXff340du9cC6xUPwOtGP/1hLcumlkkZ147pxqmUyHGYMckw=
+    secure: Fi9CTBS8m+MT59PX7cGo9I+9CXt/LJ4mo1U5hicexJIz5m53n653J0t4VYBWCCkQ5cMg2kgM+WftiFjUeB8kbFlrWWdcqB8KSMowg6fxO0TzHvYmtQmCduVYyUEmKxQQOM9ne/0qrBn3HJ2EixjafuHNlyEhKktPU/qlLb5IA5s=
   file: build/JavaApacheHttpClientFluentAPICodeGenerator.zip
   skip_cleanup: true
   on:
