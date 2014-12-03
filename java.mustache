@@ -1,0 +1,85 @@
+import java.io.IOException;
+import org.apache.http.client.fluent.*;
+{{#body}}
+import org.apache.http.entity.ContentType;
+{{/body}}
+{{#body.has_multipart_body}}
+import org.apache.http.HttpEntity;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.HttpMultipartMode;
+{{/body.has_multipart_body}}
+
+public class SendRequest
+{
+  public static void main(String[] args) {
+    sendRequest();
+  }
+  
+  private static void sendRequest() {
+    
+    // {{{request.name}}} ({{{request.method}}} {{{url.base}}})
+    
+    try {
+      {{! ----- }}
+      {{#body.has_multipart_body}}
+      HttpEntity entity = MultipartEntityBuilder.create()
+      .setMode(HttpMultipartMode.BROWSER_COMPATIBLE)
+      {{#body.multipart_body}}
+      .addTextBody("{{{name}}}", "{{{value}}}")
+      {{/body.multipart_body}}
+      .build();
+      {{/body.has_multipart_body}}
+      
+      // Create request
+      Content content = Request.{{{method}}}("{{{url.fullpath}}}")
+      {{#headers.has_headers}}
+      
+      // Add headers
+      {{#headers.header_list}}
+      .addHeader("{{{header_name}}}", "{{{header_value}}}")
+      {{/headers.header_list}}
+      {{/headers.has_headers}}
+      {{! ----- }}
+      {{#body.has_raw_body}}
+      
+      // Add body
+      .bodyString("{{{body.raw_body}}}", ContentType.DEFAULT_TEXT)
+      {{/body.has_raw_body}}
+      {{! ----- }}
+      {{#body.has_long_body}}
+      
+      // Add body
+      .bodyString("set your body string", ContentType.DEFAULT_TEXT)
+      {{/body.has_long_body}}
+      {{! ----- }}
+      {{#body.has_url_encoded_body}}
+      
+      // Add body
+      .bodyForm(Form.form()
+      {{#body.url_encoded_body}}
+      .add("{{{name}}}", "{{{value}}}")
+      {{/body.url_encoded_body}}
+      .build())
+      {{/body.has_url_encoded_body}}
+      {{! ----- }}
+      {{#body.has_multipart_body}}
+      
+      // Add body
+      .body(entity)
+      {{/body.has_multipart_body}}
+      {{! ----- }}
+      {{#body.has_json_body}}
+      
+      // Add body
+      .bodyString("{{{body.json_body_object}}}", ContentType.APPLICATION_JSON)
+      {{/body.has_json_body}}
+      
+      // Fetch request and return content
+      .execute().returnContent();
+      
+      // Print content
+      System.out.println(content);
+    }
+    catch (IOException e) { System.out.println(e); }
+  }
+}

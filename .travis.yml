@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- '0.10'
+before_install:
+- npm install coffee-script
+before_script:
+- ./node_modules/.bin/cake archive
+script:
+- ./node_modules/.bin/cake test
+deploy:
+  provider: releases
+  api_key:
+    secure: Bl2PKas/d4b6SAZ8qXgjhBsDZjbSNdfgF0TSlQ4HXOBAxyuV3k2g0svwrA3p1py7EpJWy5dqRJrnxUspsdq1W/mRGWRTHKEuTjq3YiQ4b+ElVIPCocMm0CEeEJ7lXff340du9cC6xUPwOtGP/1hLcumlkkZ147pxqmUyHGYMckw=
+  file: build/JavaApacheHttpClientFluentAPICodeGenerator.zip
+  skip_cleanup: true
+  on:
+    tags: true
+    all_branches: true
+    repo: LuckyMarmot/Paw-JavaApacheHttpClientFluentAPICodeGenerator
