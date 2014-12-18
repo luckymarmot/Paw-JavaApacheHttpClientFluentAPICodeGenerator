@@ -2,12 +2,12 @@ require "mustache.js"
 
 addslashes = (str) ->
     ("#{str}").replace(/[\\"]/g, '\\$&')
-    
+
 multiLinesToSingleLine = (str) ->
     ("#{str}").replace(/[\n"]/g, '\\n')
 
 JavaApacheHttpClientFluentAPICodeGenerator = ->
-  
+
     @url = (request) ->
         return {
             "fullpath": request.url
@@ -42,7 +42,7 @@ JavaApacheHttpClientFluentAPICodeGenerator = ->
             }
 
         multipart_body = request.multipartBody
-        if multipart_body 
+        if multipart_body
             return {
                 "has_multipart_body":true
                 "multipart_body": ({
@@ -82,7 +82,7 @@ JavaApacheHttpClientFluentAPICodeGenerator = ->
 
     @generate = (context) ->
         request = context.getCurrentRequest()
-        
+
         view =
             "request": context.getCurrentRequest()
             "method": request.method[0].toUpperCase() + request.method[1..-1].toLowerCase()
@@ -97,8 +97,9 @@ JavaApacheHttpClientFluentAPICodeGenerator = ->
 
 
 JavaApacheHttpClientFluentAPICodeGenerator.identifier =
-    "com.luckymarmot.PawExtensions.JavaApacheHttpClientFluentAPICodeGenerator";
+    "com.luckymarmot.PawExtensions.JavaApacheHttpClientFluentAPICodeGenerator"
 JavaApacheHttpClientFluentAPICodeGenerator.title =
-    "Java (Apache HttpClient via Fluent API)";
+    "Java (Apache HttpClient via Fluent API)"
+JavaApacheHttpClientFluentAPICodeGenerator.fileExtension = "java"
 
 registerCodeGenerator JavaApacheHttpClientFluentAPICodeGenerator
