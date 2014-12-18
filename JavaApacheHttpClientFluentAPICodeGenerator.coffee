@@ -101,5 +101,6 @@ JavaApacheHttpClientFluentAPICodeGenerator.identifier =
 JavaApacheHttpClientFluentAPICodeGenerator.title =
     "Java (Apache HttpClient via Fluent API)"
 JavaApacheHttpClientFluentAPICodeGenerator.fileExtension = "java"
+JavaApacheHttpClientFluentAPICodeGenerator.languageHighlighter = "java"
 
 registerCodeGenerator JavaApacheHttpClientFluentAPICodeGenerator
