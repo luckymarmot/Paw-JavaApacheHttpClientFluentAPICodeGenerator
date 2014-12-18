@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/LuckyMarmot/Paw-JavaApacheHttpClientFluentAPICodeGenerator.svg?branch=master)](https://travis-ci.org/LuckyMarmot/Paw-JavaApacheHttpClientFluentAPICodeGenerator)
+[![Build Status](https://travis-ci.org/luckymarmot/Paw-JavaApacheHttpClientFluentAPICodeGenerator.svg?branch=master)](https://travis-ci.org/luckymarmot/Paw-JavaApacheHttpClientFluentAPICodeGenerator)
 
 # Java + HttpClient (from HttpComponents) Code Generator (Paw Extension)
 
@@ -26,7 +26,7 @@ Copyright © 2014 Paw Inc.
 
 ## Contributors
 
-Created by Quentin Rousseau ([@kwent](https://github.com/kwent)). See [Contributors](https://github.com/LuckyMarmot/Paw-JavaApacheHttpClientFluentAPICodeGenerator/graphs/contributors).
+Created by Quentin Rousseau ([@kwent](https://github.com/kwent)). See [Contributors](https://github.com/luckymarmot/Paw-JavaApacheHttpClientFluentAPICodeGenerator/graphs/contributors).
 
 ## Credits
 
