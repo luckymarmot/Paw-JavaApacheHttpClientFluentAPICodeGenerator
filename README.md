@@ -2,15 +2,31 @@
 
 # Java + HttpClient (from HttpComponents) Code Generator (Paw Extension)
 
-This a Paw Extension that generates code for Java using the [Apache HttpComponents Client](http://hc.apache.org/httpcomponents-client-ga/index.html) library via the [Fluent API](http://hc.apache.org/httpcomponents-client-ga/fluent-hc/apidocs/index.html).
+A [Paw Extension](http://luckymarmot.com/paw/extensions/) that generates Java code for the [Apache HttpComponents Client](http://hc.apache.org/httpcomponents-client-ga/index.html) library via the [Fluent API](http://hc.apache.org/httpcomponents-client-ga/fluent-hc/apidocs/index.html).
 
 ## Installation
 
-* `npm install`
-* `cake build`
-* `cake install`
+Easily install this Paw Extension: [Install Java + HttpClient Code Generator](http://luckymarmot.com/paw/extensions/JavaApacheHttpClientFluentAPICodeGenerator)
 
-## Tests
+## Development
+
+### Build & Install
+
+```shell
+npm install
+cake build
+cake install
+```
+
+### Watch
+
+During development, watch for changes:
+
+```shell
+cake watch
+```
+
+### Testing
 
 Download `HttpClient >= 4.3.x` at https://hc.apache.org/downloads.cgi
 
